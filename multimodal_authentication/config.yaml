@@ -1,0 +1,29 @@
+# Dataset configurations
+data:
+  face_dataset: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/datasets/face/"
+  save_landmarks_dir: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/outputs/landmarks/"
+
+# Model configurations
+model:
+  shape_predictor: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/models/shape_predictor_68_face_landmarks.dat"
+
+# Training configurations
+parameters:
+  test_size: 0.33         # Percentage of dataset for testing
+  random_state: 42        # For reproducibility
+  num_landmarks: 68       # Number of facial landmarks (5 or 68)
+  fusion_method: "score"  # Feature-level or score-level fusion
+  classifier:             # Classifier options
+    - kNN
+    - SVM
+
+# Evaluation configurations
+evaluation:
+  num_thresholds: 100       # Number of thresholds for FAR/FRR computation
+  plot_save_dir: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/outputs/performance_plots/"
+  eer_metric: True          # Whether to compute Equal Error Rate (EER)
+
+# Output directories
+outputs:
+  trained_models_dir: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/outputs/models/"
+  performance_plots_dir: "C:/Users/HP/Documents/Chandu/Python_Project/code/multimodal_authentication/outputs/performance_plots/"
